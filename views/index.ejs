@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+</head>
+<body>
+    <!-- Header Section -->
+    <%- include("partials/navbar.ejs") %>
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <section class="blog-posts">
+            <h2>Latest Blog Posts</h2>
+            <div class="post-list">
+                <!-- Loop through the blog posts -->
+                <% if (posts.length > 0) { %>
+                    <% posts.forEach(function(post) { %>
+                        <div class="post-item">
+                            <h3><%= post.title %></h3>
+                            <p><%= post.content %></p>
+                            <p><strong>Tags:</strong> <%= post.tags.join(', ') %></p>
+                            <p class="timestamp">Posted on: <%= moment(post.timestamp).format("MMMM Do YYYY, h:mm:ss a") %></p> <!-- Format time -->
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No posts yet. <a href="/posts">Create your first post!</a></p>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

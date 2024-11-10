@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+    <!-- Header Section -->
+    <%- include("partials/navbar.ejs") %>
+
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <section class="dashboard">
+            <h2>Your Posts</h2>
+            <% if (posts.length > 0) { %>
+                <div class="posts-list">
+                    <% posts.forEach(function(post) { %>
+                        <div class="post-item">
+                            <h3><%= post.title %></h3> 
+                            <p><%= post.content %></p> 
+                            <p><strong>Tags:</strong> 
+                                <% post.tags.forEach(function(tag, index) { %> 
+                                    <span><%= tag %><%= index < post.tags.length - 1 ? ', ' : '' %></span>
+                                <% }); %>
+                            </p>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <p>No posts available. <a href="/posts">Create a post now!</a></p>
+            <% } %>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <%- include("partials/footer.ejs") %>
+    
+</body>
+</html>

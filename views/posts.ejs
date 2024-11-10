@@ -1,0 +1,40 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <!-- Header Section -->
+    <%- include("partials/navbar.ejs") %>
+
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <section class="create-post">
+            <h2>Create a New Blog Post</h2>
+            <!-- Post Form -->
+            <form action="/posts" method="POST" class="post-form">
+                <!-- Title Field -->
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required placeholder="Enter your post title">
+                </div>
+
+                <!-- Content Field -->
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea name="content" id="content" rows="10" required placeholder="Write your post content here..."></textarea>
+                </div>
+
+                <!-- Tags Field -->
+                <div class="form-group">
+                    <label for="tags">Tags (Optional)</label>
+                    <input type="text" name="tags" id="tags" placeholder="Add tags, separated by commas">
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn">Publish Post</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>

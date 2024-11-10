@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <!-- Header Section -->
+    <%- include("partials/navbar.ejs") %>
+
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <section class="post-success">
+            <h2><%= title %></h2>
+            <p>Your post has been published successfully!</p>
+            <a href="/posts" class="btn">Create Another Post</a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
